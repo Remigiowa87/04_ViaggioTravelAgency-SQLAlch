@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+<div>
+  <div class="container py-5 main-design">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col pt-5 h2">Discover our offerts</div>
+      <div class="col"></div>
+    </div>
+    {% for trip in trips%}
+    <div class="card d-flex flex-row">
+      <div
+        class="row align-items-center text-center card-trip destination-trip"
+      >
+        <i class="fa-solid fa-location-dot fa-3x tex-"></i>
+        <p>{{trip.destination}}</p>
+      </div>
+      <div class="card-body">
+        <div class="col-12 d-flex flex-row mb-2 trip-price ps-2">
+          <h5 class="card-title col-10">{{trip.trip_name}}</h5>
+          <div class="pe-5"></div>
+          <h5 class="card-title">{{trip.cost}} €</h5>
+        </div>
+        <p class="card-text ps-2">{{trip.description}}</p>
+        <div class="">
+          <button
+            type="button"
+            class="btn btn-warning align-self-end btn-buy-trip align-self-end btn-buy-trip col-2"
+          >
+            Buy trip
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+<div class="container py-5 index-container">
+  <!--<div class="row align-items-center text-center" style="height: 100vh"> -->
+  <div class="indexRows row align-items-center text-center">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col h1 mt-0 mb-3">Viaggio Travel Agency</div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <!--<img
+          style="width: 700px"
+          src="{{url_for('static', filename='camera-1130731_1920.jpg')}}"
+          alt="Map uf Europ"
+          class="rounded mx-auto d-block"
+        /> -->
+        <img
+          style="width: 600px"
+          src="{{url_for('static', filename='luggage-1149289_1920.jpg')}}"
+          alt="Map uf Europ"
+          class="rounded mx-auto d-block"
+        />
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

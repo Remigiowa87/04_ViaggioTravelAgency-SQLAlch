@@ -1,0 +1,96 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="confirmDeleteModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          This travel will be deleted:
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" id="idDeleteModalBody">...</div>
+      <div class="modal-footer">
+        <form action="" method="GET" id="confirmDeleteForm">
+          <button type="button" class="btn btn-warning" data-bs-dismiss="modal">
+            Close
+          </button>
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    //For a Delete Record Popup
+    // This function is applied to all elements with class ending with ".delete-confirm"
+    $(".delete-confirm").click(function () {
+      //getattributes of the found element
+      var desc = $(this).attr("data-desc");
+      var url = $(this).attr("data-url");
+      //the #... designes id if an element - change the text in the modal window
+      $("#idDeleteModalBody").text(desc);
+      $("#confirmDeleteForm").attr("action", url);
+    });
+  });
+</script>
+
+<!-- container -->
+<div class="container py-5 main-design">
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Nr</th>
+        <th scope="col">Trip name</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Cost - € -</th>
+        <th scope="col">Post date</th>
+        <th class="col">Action</th>
+        <th class="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr>
+        {% for dest in trips%}
+        <!-- <th scope="row">{{ loop.index}}</th>  -->
+        <th scope="row">{{ dest.id}}</th>
+        <td>{{ dest.trip_name }}</td>
+        <td>{{ dest.destination }}</td>
+        <td>{{ dest.cost }}</td>
+        <td>{{ dest.adding_trip_date}}</td>
+        <td>
+          <a
+            href="{{url_for('edit_trip', dest_id=dest.id)}}"
+            class="btn btn-warning btn-sm delete-confirm btn-trips-list"
+            >Edit</a
+          >
+        </td>
+        <td>
+          <a href="#" class="btn btn-danger btn-sm delete-confirm
+          btn-trips-list" data-bs-toggle="modal"
+          data-bs-target="#confirmDeleteModal" data-desc="{{'Delete trip "{}"
+          (ID nr {})?'.format(dest.trip_name, dest.id)}}"
+          data-url="{{url_for('delete_trip',dest_id= dest.id )}}" >Delete
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

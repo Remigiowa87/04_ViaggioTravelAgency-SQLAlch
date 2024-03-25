@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+<div class="container py-5 main-design">
+  <div class="row justify-content-start mb-3">
+    <div class="col-5 h1">New user</div>
+  </div>
+
+  <form id="user_form" action="{{url_for('new_user')}}" method="POST">
+    <div class="row mb-4 justify-content-star">
+      <!-- User name-->
+      <div class="col-3 col-form-label">
+        <label for="user_name">User name</label>
+      </div>
+      <div class="col-5">
+        <input
+          type="text"
+          id="user_name"
+          name="user_name"
+          value="{{user.user_name}}"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <!-- User email-->
+    <div class="row mb-4 justify-content-star">
+      <div class="col-3 col-form-label">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-5">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          value="{{user.email}}"
+          class="form-control"
+        />
+      </div>
+    </div>
+    <!-- User Password-->
+    <div class="row mb-4 justify-content-star">
+      <div class="col-3 col-form-label">
+        <label for="user_pass">Password</label>
+      </div>
+      <div class="col-5">
+        <input
+          type="password"
+          id="user_pass"
+          name="user_pass"
+          class="form-control"
+        /><br />
+      </div>
+    </div>
+    <!-- btn-->
+    <div class="row mt-4 justify-content-start">
+      <div class="col-3"></div>
+      <div class="col-5">
+        <input
+          type="submit"
+          value="Add new user"
+          class="col-12 btn btn-warning"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

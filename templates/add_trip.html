@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+<div class="container py-5 main-design">
+  <form id="trip_form" action="{{url_for('add_trip')}}" method="POST">
+    <!-- Headres -->
+    <div class="row justify-content-start mb-3">
+      <div class="col-5 h1">Add new trip</div>
+    </div>
+
+    <!-- Trip name -->
+    <div class="row mb-4 justify-content-start">
+      <label for="trip_name" class="col-3 col-form-label">Trip name</label>
+      <div class="col-5">
+        <input
+          type="text"
+          class="form-control"
+          id="trip_name"
+          name="trip_name"
+        />
+      </div>
+    </div>
+
+    <!-- Destination -->
+    <div class="row mb-4 justify-content-start">
+      <label for="destination" class="col-3 col-form-label">Destination</label>
+      <div class="col-5">
+        <select name="destination" id="destination" class="form-select">
+          {% for dest in desination_list.list_of_destinations%}
+          <option value="{{dest.country}}">{{dest.country}}</option>
+          {% endfor%}
+        </select>
+      </div>
+    </div>
+
+    <!-- Cost -->
+    <div class="row mb-4 justify-content-start">
+      <label for="trip_cost" class="col-3 col-form-label">Cost - € -</label>
+      <div class="col-5">
+        <input
+          type="number"
+          min="100"
+          max="100000"
+          step="100"
+          class="form-control"
+          id="trip_cost"
+          name="trip_cost"
+        />
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row mb-4 justify-content-start">
+      <label for="description" class="col-3 col-form-label"
+        >Short description</label
+      >
+      <div class="col-5">
+        <textarea
+          name="description"
+          cols="50"
+          rows="4"
+          class="form-control"
+          id="description"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Send button -->
+    <div class="row mb-4 justify-content-start">
+      <label for="inputPassword" class="col-3 col-form-label"></label>
+      <div class="col-5">
+        <button
+          type="submit"
+          class="btn col-12 btn-warning btn-block"
+          name="submit_button"
+          value="new_trip"
+        >
+          Add trip
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

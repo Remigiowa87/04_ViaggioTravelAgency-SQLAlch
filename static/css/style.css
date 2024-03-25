@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  /* background-color: #b6b8b2; */
+  background-color: #ffffff;
+}
+
+.indexRows {
+  /* background-color: #af3737; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+}
+
+nav {
+  z-index: 5;
+}
+
+.card {
+  height: 200px;
+  margin: 10px 50px;
+  padding: 10px 10px;
+  background-color: #f8f9fa78;
+  border: 1px solid black;
+}
+
+/* .index-container {
+  height: 100%;
+} */
+
+.main-design {
+  height: 100%;
+  background-image: linear-gradient(
+      45deg,
+      rgb(234, 220, 220) 0%,
+      rgb(234, 220, 220) 11%,
+      rgb(217, 202, 201) 11%,
+      rgb(217, 202, 201) 24%,
+      rgb(184, 169, 166) 24%,
+      rgb(184, 169, 166) 29%,
+      rgb(232, 225, 223) 29%,
+      rgb(232, 225, 223) 45%,
+      rgb(225, 202, 178) 45%,
+      rgb(225, 202, 178) 87%,
+      rgb(189, 181, 137) 87%,
+      rgb(189, 181, 137) 90%,
+      rgb(179, 197, 144) 90%,
+      rgb(179, 197, 144) 100%
+    ),
+    linear-gradient(
+      67.5deg,
+      rgb(234, 220, 220) 0%,
+      rgb(234, 220, 220) 11%,
+      rgb(217, 202, 201) 11%,
+      rgb(217, 202, 201) 24%,
+      rgb(184, 169, 166) 24%,
+      rgb(184, 169, 166) 29%,
+      rgb(232, 225, 223) 29%,
+      rgb(232, 225, 223) 45%,
+      rgb(225, 202, 178) 45%,
+      rgb(225, 202, 178) 87%,
+      rgb(189, 181, 137) 87%,
+      rgb(189, 181, 137) 90%,
+      rgb(179, 197, 144) 90%,
+      rgb(179, 197, 144) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgb(234, 220, 220) 0%,
+      rgb(234, 220, 220) 11%,
+      rgb(217, 202, 201) 11%,
+      rgb(217, 202, 201) 24%,
+      rgb(184, 169, 166) 24%,
+      rgb(184, 169, 166) 29%,
+      rgb(232, 225, 223) 29%,
+      rgb(232, 225, 223) 45%,
+      rgb(225, 202, 178) 45%,
+      rgb(225, 202, 178) 87%,
+      rgb(189, 181, 137) 87%,
+      rgb(189, 181, 137) 90%,
+      rgb(179, 197, 144) 90%,
+      rgb(179, 197, 144) 100%
+    ),
+    linear-gradient(90deg, rgb(203, 205, 190), rgb(246, 213, 120));
+  background-blend-mode: overlay, overlay, overlay, normal;
+  background-attachment: fixed;
+}
+
+.card-trip {
+  background-color: rgba(200, 200, 200, 0.237);
+  border-radius: 4%;
+  width: 150px;
+  margin: 5px;
+}
+
+.btn-buy-trip {
+  position: absolute;
+  bottom: 15px;
+}
+
+.trip-price {
+  background-color: rgba(200, 200, 200, 0.15);
+  padding-top: 5px;
+}
+
+.btn-trips-list {
+  width: 80px;
+}
+
+.destination-trip {
+  transition: 0.4s;
+}
+
+.card:hover .destination-trip {
+  color: rgb(255, 193, 7);
+  background-color: rgba(0, 0, 0, 0.745);
+  font-size: 25px;
+}
+
+footer {
+  display: block;
+}

@@ -1,0 +1,13 @@
+{% macro show_flash_message(message)%}
+<div class="alert alert-primary alert-dismissible fade show mb-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+{% endmacro %} {% macro show_all_flash_message()%} {% for message in
+get_flashed_messages()%} {{show_flash_message(message)}} {%endfor%} {%
+endmacro%}

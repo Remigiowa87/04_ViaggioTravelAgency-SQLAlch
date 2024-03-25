@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block title %}Viaggio{% endblock title %} {% block
+content %}
+
+<form id="trip_form" action="{{url_for('add_trip')}}" method="POST">
+  <div class="container main-design">
+    <!-- Headres -->
+    <div class="row justify-content-start mb-3">
+      <div class="col-5 h1">Add new trip</div>
+    </div>
+
+    <!-- Trip name -->
+    <div class="row mb-4 justify-content-start">
+      <label for="trip_name" class="col-3 col-form-label">Trip name</label>
+      <div class="col-5">
+        <input
+          style="background-color: rgba(13, 110, 253, 0.1)"
+          type="text"
+          class="form-control"
+          id="trip_name"
+          name="trip_name"
+          value="{{trip_name}}"
+          readonly
+        />
+      </div>
+    </div>
+
+    <!-- Destination -->
+    <div class="row mb-4 justify-content-start">
+      <label for="destination" class="col-3 col-form-label">Destination</label>
+      <div class="col-5">
+        <input
+          style="background-color: rgba(13, 110, 253, 0.1)"
+          type="text"
+          class="form-control"
+          id="destination"
+          name="destination"
+          value="{{destination}}"
+          readonly
+        />
+      </div>
+    </div>
+
+    <!-- Cost -->
+    <div class="row mb-4 justify-content-start">
+      <label for="trip_cost" class="col-3 col-form-label">Cost - € -</label>
+      <div class="col-5">
+        <input
+          style="background-color: rgba(13, 110, 253, 0.1)"
+          type="text"
+          class="form-control"
+          id="trip_cost"
+          name="trip_cost"
+          value="{{trip_cost}}"
+          readonly
+        />
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row mb-4 justify-content-start">
+      <label for="description" class="col-3 col-form-label"
+        >Short description</label
+      >
+      <div class="col-5">
+        <textarea
+          style="background-color: rgba(13, 110, 253, 0.1)"
+          name="description"
+          cols="50"
+          rows="4"
+          class="form-control"
+          id="description"
+          readonly
+        >
+{{description}}</textarea
+        >
+      </div>
+    </div>
+
+    <!-- Send button -->
+    <div class="row mb-4 justify-content-start">
+      <label for="inputPassword" class="col-3 col-form-label"></label>
+      <div class="col-5"></div>
+    </div>
+  </div>
+</form>
+{% endblock %}
